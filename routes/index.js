@@ -7,8 +7,14 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/test', function(req, res, next) {
+  onRequest();
+});
+
+
+
+function onRequest(request, response) {
   response.writeHead(200, {'Content-Type': 'text/html'});
-  fs.readFile('/views/index.html', null, function(error, data) {
+  fs.readFile('./index.html', null, function(error, data) {
     if(error) {
       response.writeHead(404);
       response.write("File not found");
@@ -18,6 +24,5 @@ router.get('/test', function(req, res, next) {
     response.end();
 
   })
-});
-
+}
 module.exports = router;
