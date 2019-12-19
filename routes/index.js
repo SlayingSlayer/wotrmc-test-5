@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/test', function(req, res, next) {
-  onRequest();
+  onRequest(req, res);
 });
 
 
