@@ -22,8 +22,13 @@ router.get('/about',function(req,res){
   res.sendFile(path.join(__dirname+'/index.html'));
 });
 
+//module.exports = router;
 
+//add the router
+app.use('/', router);
+app.listen(process.env.port || 3000);
 
+console.log('Running at Port 3000');
 
 // router.get('/test', function(req, res, next) {
 //   res.writeHead(200, {'Content-Type': 'text/html'});
@@ -39,5 +44,5 @@ router.get('/about',function(req,res){
 //   })
 //}
 
-module.exports = router;
+
 
