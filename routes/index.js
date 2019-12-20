@@ -29,7 +29,7 @@ router.get('/test', function(req, res, next) {
     res.end();
 
   })
-}
+});
 
-module.exports = router;
+//module.exports = router;
 
